@@ -1,0 +1,4 @@
+// |Student Index|
+let students = ["Talib", "Khalil", "Junaid", "Kaitlyn"];
+
+console.log(students[1]);
