@@ -7,10 +7,18 @@ let students = [
   { name: "Ezra", scores: [100, 99, 100, 87] },
 ];
 
-function findStudent() {
-  for (index = 0; index < students.length; index++) {
-    console.log(students[index].name);
+function getAndDisplayAverage() {
+  for (let i = 0; i < students.length; i++) {
+    let sum = 0;
+
+    for (let j = 0; j < students[i].scores.length; j++) {
+      sum += students[i].scores[j];
+    }
+
+    let studentAverage = sum / students[i].scores.length;
+
+    console.log(`Name: ${students[i].name}`);
+    console.log(`Student Average: ${studentAverage.toFixed(2)}\n`);
   }
 }
-
-findStudent();
+getAndDisplayAverage();
