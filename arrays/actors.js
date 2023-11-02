@@ -39,6 +39,7 @@ function findMemberById(academyMembers, memberID) {
 }
 
 // log the function using the params selected
+// console.log(findMemberById(academyMembers, 187));
 
 function findMembersWith3Films(academyMembers, filmCount) {
   threeOrMore = [];
@@ -50,7 +51,28 @@ function findMembersWith3Films(academyMembers, filmCount) {
   }
   return threeOrMore;
 }
+// console.log(findMembersWith3Films(academyMembers, 3));
 
-// console.log(findMemberById(academyMembers, 187));
+function findBob(academyMembers, findMember) {
+  let bob = [];
+  for (const academyIndex of academyMembers) {
+    if (academyIndex.name.includes(findMember)) {
+      bob.push(academyIndex.name);
+    }
+  }
+  return bob;
+}
 
-console.log(findMembersWith3Films(academyMembers, 3));
+// console.log(findBob(academyMembers, "Bob"));
+
+function findMembersInAFilms(academyMembers, searchCriteria) {
+  let AFilmMembers = [];
+  for (const academyIndex of academyMembers) {
+    for (const academyIndexFilms of academyIndex.films)
+      if (academyIndexFilms.indexOf(searchCriteria) == 0) {
+        AFilmMembers.push(academyIndex.name);
+      }
+  }
+  return AFilmMembers;
+}
+console.log(findMembersInAFilms(academyMembers, "A"));
